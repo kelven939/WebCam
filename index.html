@@ -22,9 +22,10 @@
   <video id="video" autoplay></video>
   <button id="captureButton">Capturar Foto</button>
   <canvas id="canvas"></canvas>
+  
   <script>
 
-    // Manipulador de evento para o botão de captura
+    /* Manipulador de evento para o botão de captura
     captureButton.addEventListener('click', function() {
   // Define o tamanho do canvas para o mesmo tamanho do vídeo
     canvasElement.width = videoElement.videoWidth;
@@ -44,10 +45,10 @@
 
   // Adiciona o link de download à página
   document.body.appendChild(downloadLink);
-});
+});*/
 
 // Sem Canvas
-   /* Manipulador de evento para o botão de captura
+   // Manipulador de evento para o botão de captura
 captureButton.addEventListener('click', function() {
   // Obtém a stream de mídia capturada a partir do elemento de vídeo
   var captureStream = videoElement.srcObject.captureStream();
@@ -60,7 +61,7 @@ captureButton.addEventListener('click', function() {
 
   // Adiciona o link de download à página
   document.body.appendChild(downloadLink);
-}); */
+});
 
   </script>
   
