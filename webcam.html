@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acessar a Webcam</title>
+  <style>
+    #video {
+      width: 100%;
+      height: auto;
+    }
+    #canvas {
+      display: none;
+    }
+    #captureButton {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+  
+<body>
+  
+  <video id="video" autoplay></video>
+  <button id="captureButton">Capturar Foto</button>
+  <canvas id="canvas"></canvas>
+  <script>
+
+    // Manipulador de evento para o botão de captura
+    captureButton.addEventListener('click', function() {
+  // Define o tamanho do canvas para o mesmo tamanho do vídeo
+    canvasElement.width = videoElement.videoWidth;
+    canvasElement.height = videoElement.videoHeight;
+
+  // Desenha o vídeo atual no canvas
+    canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+
+  // Recupera a imagem do canvas como uma URL de dados
+    let imageURL = canvasElement.toDataURL('image/png');
+
+  // Cria um elemento de link para download
+    let downloadLink = document.createElement('a');
+  qdownloadLink.href = imageURL;
+  downloadLink.download = 'foto.png';
+  downloadLink.textContent = 'Baixar Foto';
+
+  // Adiciona o link de download à página
+  document.body.appendChild(downloadLink);
+});
+
+// Sem Canvas
+   /* Manipulador de evento para o botão de captura
+captureButton.addEventListener('click', function() {
+  // Obtém a stream de mídia capturada a partir do elemento de vídeo
+  var captureStream = videoElement.srcObject.captureStream();
+
+  // Cria um elemento de link para download
+  var downloadLink = document.createElement('a');
+  downloadLink.href = URL.createObjectURL(captureStream);
+  downloadLink.download = 'captura.webm';
+  downloadLink.textContent = 'Baixar Captura';
+
+  // Adiciona o link de download à página
+  document.body.appendChild(downloadLink);
+}); */
+
+  </script>
+  
+</body>
+</html>
